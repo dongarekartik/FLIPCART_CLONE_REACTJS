@@ -2,11 +2,12 @@
 import React from 'react'
 
 import './App.css'
+import Header from './componant/Header'
 
 function App() {
   return (
     <>
-       <h1>our new project flifcart</h1>
+       <Header/>
     </>
   )
 }
