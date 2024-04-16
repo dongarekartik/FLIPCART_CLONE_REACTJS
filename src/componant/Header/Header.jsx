@@ -4,6 +4,34 @@ import { AppBar, Box, Toolbar, Typography, styled } from "@mui/material"
 import Search from '../Header/Search';
 import CostomButtons from '../Header/CostomButtons';
 
+const Header = () => {
+    return (
+        <AppBarr >
+            <Toolbar style={{minHeight : 55 }}>
+                <Boxx >
+                    <img src={logoURL} alt='logo' style={{ width: '75px' }} />
+                    <Box style={{display : 'flex'}}>
+                        <Typographyy>Explore &nbsp;
+                         <Box component='span' style={{color:'#ffE500'}}>plus</Box>
+                        </Typographyy>
+                        <Plusimage src={subURL} />
+                    </Box>
+                </Boxx>
+                <Search/>
+                <CostombuttonWrapper>
+                    <CostomButtons/>
+                </CostombuttonWrapper>
+            </Toolbar>
+        </AppBarr>
+    );
+}
+
+export default Header;
+
+
+
+
+
 const logoURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png';
 const subURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png';
 
@@ -33,27 +61,3 @@ const Typographyy = styled(Typography)`
   align-items : center ;
  `;
 
-
-const Header = () => {
-    return (
-        <AppBarr >
-            <Toolbar style={{minHeight : 55 }}>
-                <Boxx >
-                    <img src={logoURL} alt='logo' style={{ width: '75px' }} />
-                    <Box style={{display : 'flex'}}>
-                        <Typographyy>Explore &nbsp;
-                         <Box component='span' style={{color:'#ffE500'}}>plus</Box>
-                        </Typographyy>
-                        <Plusimage src={subURL} />
-                    </Box>
-                </Boxx>
-                <Search/>
-                <CostombuttonWrapper>
-                    <CostomButtons/>
-                </CostombuttonWrapper>
-            </Toolbar>
-        </AppBarr>
-    );
-}
-
-export default Header;

@@ -1,6 +1,35 @@
-import React from 'react';
-import {Box , Button, Typography , styled} from "@mui/material"
+import React, { useState } from 'react';
+import { Box, Button, Typography, styled } from "@mui/material"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import LoginDailog from '../Login/LoginDailog';
+
+
+
+const CostomButtons = () => {
+  const [open, seTopen] = useState(false)
+
+  const openDilog = () => {
+    seTopen(true)
+  }
+
+  return (
+    <Wrapper>
+      <LoginButton variant='contained' onClick={() => openDilog()}> login </LoginButton>
+
+      <Typography style={{ marginTop: 3, width: 135 }}> Become a Saller </Typography>
+      <Typography style={{ marginTop: 3, }}> more </Typography>
+      <Container>
+        <ShoppingCartIcon />
+        <Typography>Cart</Typography>
+      </Container>
+      <LoginDailog open={open} seTopen={seTopen} />
+    </Wrapper>
+  );
+}
+
+export default CostomButtons;
+
+
 
 const Wrapper = styled(Box)`
 display : flex ;
@@ -26,20 +55,3 @@ const LoginButton = styled(Button)`
  font-weight: 600;
  height : 32px;
 `;
-
-const CostomButtons = () => {
-  return (
-    <Wrapper>
-      <LoginButton variant='contained'> login </LoginButton>
-
-      <Typography style={{marginTop : 3 , width : 135}}> becom a saller </Typography>
-      <Typography style={{marginTop :3, }}> more </Typography>
-      <Container>
-         <ShoppingCartIcon/>
-         <Typography>Cart</Typography>
-      </Container>
-    </Wrapper>
-  );
-}
-
-export default CostomButtons;
