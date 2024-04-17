@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Button, Typography, styled } from "@mui/material"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LoginDailog from '../Login/LoginDailog';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
 
 
 
@@ -14,7 +15,8 @@ const CostomButtons = () => {
 
   return (
     <Wrapper>
-      <LoginButton variant='contained' onClick={() => openDilog()}> login </LoginButton>
+       
+      <LoginButton variant='contained' onClick={() => openDilog()}><LockopenIcon/> login </LoginButton>
 
       <Typography style={{ marginTop: 3, width: 135 }}> Become a Saller </Typography>
       <Typography style={{ marginTop: 3, }}> more </Typography>
@@ -54,4 +56,12 @@ const LoginButton = styled(Button)`
  box-shadow : none;
  font-weight: 600;
  height : 32px;
+ margin-left : 40px;
+`;
+
+const LockopenIcon = styled(LockOpenIcon)`
+   align-items : center ;
+   font-size : 16px;
+   margin-right : 10px;
+
 `;
