@@ -13,17 +13,36 @@ const accountInitialvalu = {
   }
 }
 
+const SignUpInitialValue = {
+  FristName: "",
+  LastName: "",
+  userName: "",
+  Email: "",
+  password: ""
+}
 
 const LoginDailog = ({ open, seTopen }) => {
-
   const [account, togleAccount] = useState(accountInitialvalu.LogIn)
+  const [signup, setSignup] = useState(SignUpInitialValue)
+
+
   const HandleClose = () => {
     seTopen(false)
     togleAccount(accountInitialvalu.LogIn)
   }
-const togleSignup =()=>{
-  togleAccount(accountInitialvalu.signup)
-}
+  const togleSignup = () => {
+    togleAccount(accountInitialvalu.signup)
+  }
+
+  const oninputchange = (e) => {
+    setSignup({...signup, [e.target.name ]: e.target.value})
+    console.log(signup)
+  }
+
+  const signupUser =()=>{
+    // api calling 
+  }
+
 
   return (
     <Dialog open={open} onClose={() => HandleClose()} style={{ maxWidth: 'unset' }}>
@@ -41,16 +60,16 @@ const togleSignup =()=>{
               <LoginButton>Login</LoginButton>
               <Typography style={{ textAlign: 'center' }}>Or</Typography>
               <RequestOtp>Request OTP </RequestOtp>
-              <CreateAccunt onClick={()=>togleSignup()}>New to flipkart? Create an account </CreateAccunt>
+              <CreateAccunt onClick={() => togleSignup()}>New to flipkart? Create an account </CreateAccunt>
             </Wrapper>
             :
             <Wrapper>
-              <TextField variant='standard' label='Enter Frist Name' />
-              <TextField variant='standard' label='Enter Last Name' />
-              <TextField variant='standard' label='Enetr User Name' />
-              <TextField variant='standard' label='Enter Password' />
-              <TextField variant='standard' label='Enter Phone No' />
-              <RequestOtp>Continue</RequestOtp>
+              <TextField variant='standard' label='Enter Frist Name' name='FristName' onChange={(e) => oninputchange(e)} />
+              <TextField variant='standard' label='Enter Last Name' name='Last Name' onChange={(e) => oninputchange(e)} />
+              <TextField variant='standard' label='Enetr User Name' name='userName' onChange={(e) => oninputchange(e)} />
+              <TextField variant='standard' label='Enter Password' name='password' onChange={(e) => oninputchange(e)} />
+              <TextField variant='standard' label='Enter Email' name='Email' onChange={(e) => oninputchange(e)} />
+              <RequestOtp onClick={()=>signupUser()}> Continue</RequestOtp>
             </Wrapper>
           }
 
@@ -72,8 +91,8 @@ const Component = styled(Box)`
 const Image = styled(Box)`
  background : #2874f0 url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png
 ) no-repeat center 85%;
- height : 83%;
- width : 27%;
+ height : 87%;
+ width : 28%;
  padding :45px 35px;
  &> p, > h5 {
   color : #ffffff;
@@ -84,7 +103,7 @@ const Image = styled(Box)`
 const Wrapper = styled(Box)`
  display : flex;
  flex-direction : column;
- height :83%;
+ ${'' /* height :83%; */}
  padding : 25px 35px;
  flex : 1;
  & > div, & > button , & > p{
