@@ -3,7 +3,7 @@ import { Box, Button, Typography, styled } from "@mui/material"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LoginDailog from '../Login/LoginDailog';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
-
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 
 const CostomButtons = () => {
@@ -16,15 +16,16 @@ const CostomButtons = () => {
   return (
     <Wrapper>
        
-      <LoginButton variant='contained' onClick={() => openDilog()}><LockopenIcon/> login </LoginButton>
+      <LoginButton variant='contained' onClick={() => openDilog()}><LockopenIcon/>Login </LoginButton>
 
       <Typography style={{ marginTop: 3, width: 135 }}> Become a Saller </Typography>
       <Typography style={{ marginTop: 3, }}> more </Typography>
       <Container>
-        <ShoppingCartIcon />
+        <ShoppingcartIcon />
         <Typography>Cart</Typography>
       </Container>
       <LoginDailog open={open} seTopen={seTopen} />
+       <MoreertIcon/>
     </Wrapper>
   );
 }
@@ -65,3 +66,12 @@ const LockopenIcon = styled(LockOpenIcon)`
    margin-right : 10px;
 
 `;
+
+const ShoppingcartIcon = styled(ShoppingCartIcon)`
+    margin-right : 5px;
+`;
+
+const MoreertIcon = styled(MoreVertIcon)`
+ padding-top : 5px;
+ item-align : center;
+`
