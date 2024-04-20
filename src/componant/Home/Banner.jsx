@@ -40,7 +40,7 @@ const Banner = () => {
     >
       {
         bannerData.map((items) => (
-          <Image src={items.url} alt='banner' />
+          <Image key={items.id} src={items.url} alt='banner' />
         ))
       }
     </Carousel>
