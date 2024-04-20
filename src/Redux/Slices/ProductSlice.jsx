@@ -1,10 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-export const GetProduct = createAsyncThunk('Products/data', async () => {
-    const response = await fetch('https://fakestoreapi.com/products');
-    const data = await response.json();
-    return data;
-});
 
 const initialState = {
     data: [],
@@ -30,5 +25,13 @@ const ProductSlice = createSlice({
             });
     }
 });
+
+export const GetProduct = createAsyncThunk('Products/data', async () => {
+    const response = await fetch('https://fakestoreapi.com/products');
+    const data = await response.json();
+    console.log(data,'responce');
+    return data;
+});
+
 
 export default ProductSlice.reducer;
