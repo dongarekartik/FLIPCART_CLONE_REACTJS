@@ -1,6 +1,38 @@
-import React from 'react';
-import {Box , Button, Typography , styled} from "@mui/material"
+import React, { useState } from 'react';
+import { Box, Button, Typography, styled } from "@mui/material"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import LoginDailog from '../Login/LoginDailog';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+
+
+const CostomButtons = () => {
+  const [open, seTopen] = useState(false)
+
+  const openDilog = () => {
+    seTopen(true)
+  }
+
+  return (
+    <Wrapper>
+       
+      <LoginButton variant='contained' onClick={() => openDilog()}><LockopenIcon/>Login </LoginButton>
+
+      <Typography style={{ marginTop: 3, width: 135 }}> Become a Saller </Typography>
+      <Typography style={{ marginTop: 3, }}> more </Typography>
+      <Container>
+        <ShoppingcartIcon />
+        <Typography>Cart</Typography>
+      </Container>
+      <LoginDailog open={open} seTopen={seTopen} />
+       <MoreertIcon/>
+    </Wrapper>
+  );
+}
+
+export default CostomButtons;
+
+
 
 const Wrapper = styled(Box)`
 display : flex ;
@@ -25,21 +57,21 @@ const LoginButton = styled(Button)`
  box-shadow : none;
  font-weight: 600;
  height : 32px;
+ margin-left : 40px;
 `;
 
-const CostomButtons = () => {
-  return (
-    <Wrapper>
-      <LoginButton variant='contained'> login </LoginButton>
+const LockopenIcon = styled(LockOpenIcon)`
+   align-items : center ;
+   font-size : 16px;
+   margin-right : 10px;
 
-      <Typography style={{marginTop : 3 , width : 135}}> becom a saller </Typography>
-      <Typography style={{marginTop :3, }}> more </Typography>
-      <Container>
-         <ShoppingCartIcon/>
-         <Typography>Cart</Typography>
-      </Container>
-    </Wrapper>
-  );
-}
+`;
 
-export default CostomButtons;
+const ShoppingcartIcon = styled(ShoppingCartIcon)`
+    margin-right : 5px;
+`;
+
+const MoreertIcon = styled(MoreVertIcon)`
+ padding-top : 5px;
+ item-align : center;
+`
