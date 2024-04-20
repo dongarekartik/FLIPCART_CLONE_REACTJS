@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { AppBar, Box, Toolbar, Typography, styled } from "@mui/material"
-import Search from './Search';
-import CostomButtons from './CostomButtons';
+import Search from '../Header/Search';
+import CostomButtons from '../Header/CostomButtons';
 
 const logoURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png';
 const subURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png';
@@ -27,6 +27,13 @@ const Typographyy = styled(Typography)`
     marginLeft:5
 
  });
+
+ const CostombuttonWrapper = styled(Box)`
+  margin : 0 5% 0 auto ;
+  align-items : center ;
+ `;
+
+
 const Header = () => {
     return (
         <AppBarr >
@@ -41,9 +48,9 @@ const Header = () => {
                     </Box>
                 </Boxx>
                 <Search/>
-                <Box>
+                <CostombuttonWrapper>
                     <CostomButtons/>
-                </Box>
+                </CostombuttonWrapper>
             </Toolbar>
         </AppBarr>
     );
