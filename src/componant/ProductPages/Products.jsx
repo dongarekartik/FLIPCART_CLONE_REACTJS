@@ -1,7 +1,8 @@
  
- import React, { useEffect } from 'react';
+ import React, { useEffect, useState } from 'react';
  import {useSelector, useDispatch} from 'react-redux'
  import { GetProduct } from '../../Redux/Slices/ProductSlice';
+import { loginApi } from '../../ApiHandling';
 
  const Products = () => {
  const Dispatch = useDispatch()
@@ -9,7 +10,13 @@
   const ProductData = useSelector((state)=>state.product.data);
 
   useEffect(()=>{
-    Dispatch(GetProduct())
+    getData();
+    Dispatch(GetProduct());
+    // const x= loginApi();
+    //   // console.log(x,'sdfghjk')
+    //   setLoginData(x);
+    
+
   },[])
 
 

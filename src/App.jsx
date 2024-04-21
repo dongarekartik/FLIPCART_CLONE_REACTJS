@@ -13,6 +13,7 @@ function App() {
       <Header />
       <Box  style={{marginTop : 54}}>
         <Home />
+        <Products/>
       </Box>
       <Products/>
     </>

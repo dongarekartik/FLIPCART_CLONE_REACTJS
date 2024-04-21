@@ -19,7 +19,7 @@ const CostomButtons = () => {
       <LoginButton variant='contained' onClick={() => openDilog()}><LockopenIcon/>Login </LoginButton>
 
       <Typography style={{ marginTop: 3, width: 135 }}> Become a Saller </Typography>
-      <Typography style={{ marginTop: 3, }}> more </Typography>
+      <Typography style={{ marginTop: 3, }}> More </Typography>
       <Container>
         <ShoppingcartIcon />
         <Typography>Cart</Typography>
