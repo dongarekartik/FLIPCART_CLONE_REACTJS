@@ -5,19 +5,24 @@
 
  const Products = () => {
  const Dispatch = useDispatch()
-//  const {data : products} = useSelector(state=>state.Products);
-  const ProductData = useSelector((state)=>state.Products.data);
-  console.log(ProductData, "Data")
 
- 
- console.log(products , "products")
+  const ProductData = useSelector((state)=>state.product.data);
 
   useEffect(()=>{
     Dispatch(GetProduct())
   },[])
+
+
    return (
      <div>
-       
+        {
+          ProductData.map((items)=>{
+            return <>
+              <h1>{items.title}</h1>
+              <h1>{items.price}</h1>
+            </>
+          })
+        }
      </div>
    );
  }

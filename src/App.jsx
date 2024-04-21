@@ -5,6 +5,7 @@ import './App.css'
 import Header from './componant/Header/Header';
 import Home from './componant/Home/Home';
 import { Box } from '@mui/material';
+import Products from './componant/ProductPages/Products';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Box  style={{marginTop : 54}}>
         <Home />
       </Box>
+      <Products/>
     </>
   )
 }
