@@ -4,10 +4,8 @@ const loginApi=async(endpoint)=>{
     const [error,setError]=useState(false);
     const [loading,setLoading]=useState(false);
     const [data,setData]=useState(false);
-
-    useEffect(()=>{
         
-        (async()=>{
+        // (async()=>{
             try {
                 setLoading(true)
                 setError(false)
@@ -23,8 +21,8 @@ const loginApi=async(endpoint)=>{
                 setError(true);
                 setLoading(false)
             }
-        })()
-    },[])
+        // })()
+    // },[])
 // console.log('hiiiii')
     return {error,loading,data}
 }

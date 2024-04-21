@@ -8,18 +8,25 @@ import { loginApi } from '../../ApiHandling';
  const Dispatch = useDispatch()
 //  const {data : products} = useSelector(state=>state.Products);
   const ProductData = useSelector((state)=>state.product);
+  const [error,setError]=useState(false);
+  const [loading,setLoading]=useState(false);
+  const [data,setData]=useState(false);
+      
   console.log(ProductData.data, "Data")
 const [loginData,setLoginData]=useState(null) 
 
-// const getData=async()=>{
-//   const x=await loginApi();
-//   console.log(x,'sdfghjk')
-//   setLoginData(x);
-// }
-// getData();
+const getData=async()=>{
+
+}
+
   useEffect(()=>{
+    getData();
     Dispatch(GetProduct());
-  
+    // const x= loginApi();
+    //   // console.log(x,'sdfghjk')
+    //   setLoginData(x);
+    
+
   },[])
   console.log(loginData,'loginData')
    return (
