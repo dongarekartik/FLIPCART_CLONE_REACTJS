@@ -15,7 +15,7 @@ function App() {
         <Home />
         <Products/>
       </Box>
-      <Products/>
+      {/* <Products/> */}
     </>
   )
 }

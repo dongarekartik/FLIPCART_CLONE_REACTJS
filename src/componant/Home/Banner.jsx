@@ -1,5 +1,5 @@
 import React from 'react';
-import Carousel from 'react-multi-carousel'
+import Carousel from 'react-multi-carousel';
 import { bannerData } from '../../Constant/Navdata';
 import { styled } from '@mui/material';
 import 'react-multi-carousel/lib/styles.css';
